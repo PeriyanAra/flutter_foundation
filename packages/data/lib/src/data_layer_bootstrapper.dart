@@ -13,8 +13,7 @@ class DataLayerBootstrapper extends ServiceLocator {
   DataLayerBootstrapper._();
 
   Future<void> initialize({VoidCallback? onUnauthorized}) async {
-    final chopperStagingClient =
-        Client.createStagingClient(get(), onUnauthorized);
+    final chopperStagingClient = Client.createStagingClient(get(), onUnauthorized);
 
     // Services
     registerLazySingleton<HomeApiService>(

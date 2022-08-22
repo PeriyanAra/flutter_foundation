@@ -14,9 +14,8 @@ class HomeScreenViewModel with _$HomeScreenViewModel {
     required HomeData homeData,
   }) {
     return HomeScreenViewModel(
-      characters: homeData.characters
-          .map((e) => CharacterViewModel.fromEntity(character: e))
-          .toList(),
+      characters:
+          homeData.characters.map((e) => CharacterViewModel.fromEntity(character: e)).toList(),
     );
   }
 }

@@ -22,8 +22,7 @@ class CharacterDto with _$CharacterDto {
     required List<String> episode,
   }) = _CharacterDto;
 
-  factory CharacterDto.fromJson(Map<String, Object?> json) =>
-      _$CharacterDtoFromJson(json);
+  factory CharacterDto.fromJson(Map<String, Object?> json) => _$CharacterDtoFromJson(json);
 
   const CharacterDto._();
 

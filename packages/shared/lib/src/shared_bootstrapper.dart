@@ -9,8 +9,6 @@ class SharedBootstrapper extends ServiceLocator {
 
   Future<void> initialize() async {
     try {
-      
-
       registerLazySingleton<Logger>(() => Logger.factory(false));
     } on Object catch (e) {
       log('SharedBootstrapper error: ${e.toString()}');

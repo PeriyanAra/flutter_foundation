@@ -12,6 +12,5 @@ class InfoDto with _$InfoDto {
     required String? prev,
   }) = _InfoDto;
 
-  factory InfoDto.fromJson(Map<String, Object?> json) =>
-      _$InfoDtoFromJson(json);
+  factory InfoDto.fromJson(Map<String, Object?> json) => _$InfoDtoFromJson(json);
 }

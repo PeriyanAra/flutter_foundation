@@ -10,6 +10,5 @@ class OriginDto with _$OriginDto {
     required String url,
   }) = _OriginDto;
 
-  factory OriginDto.fromJson(Map<String, Object?> json) =>
-      _$OriginDtoFromJson(json);
+  factory OriginDto.fromJson(Map<String, Object?> json) => _$OriginDtoFromJson(json);
 }

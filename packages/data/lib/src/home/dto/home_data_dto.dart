@@ -15,8 +15,7 @@ class HomeDataDto with _$HomeDataDto {
 
   const HomeDataDto._();
 
-  factory HomeDataDto.fromJson(Map<String, Object?> json) =>
-      _$HomeDataDtoFromJson(json);
+  factory HomeDataDto.fromJson(Map<String, Object?> json) => _$HomeDataDtoFromJson(json);
 
   HomeData toEntity() => HomeData(
         characters: results.map((e) => e.toEntity()).toList(),
