@@ -13,33 +13,42 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider.value(
       value: get<HomeBloc>()..add(const HomeEvent.getData()),
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.indigoAccent,
-          elevation: 0,
-          title: const Text(
-            'Rick and Morty cgaracters',
-          ),
-          centerTitle: true,
+      child: const HomeScreenContentBuilder(),
+    );
+  }
+}
+
+class HomeScreenContentBuilder extends StatelessWidget {
+  const HomeScreenContentBuilder({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.indigoAccent,
+        elevation: 0,
+        title: const Text(
+          'Rick and Morty cgaracters',
         ),
-        body: BlocBuilder<HomeBloc, HomeState>(
-          builder: (context, state) {
-            if (state is HomeLoadedState) {
-              return HomeLoadedContent(
-                homeScreenViewModel: state.homeScreenViewModel,
-              );
-            }
-            if (state is HomeLoadingState) {
-              return const HomeLoadingContent();
-            }
-            if (state is HomeErrorState) {
-              return HomeErrorContent(
-                errorMessage: state.errorMessage,
-              );
-            }
+        centerTitle: true,
+      ),
+      body: BlocBuilder<HomeBloc, HomeState>(
+        builder: (context, state) {
+          if (state is HomeLoadedState) {
+            return HomeLoadedContent(
+              homeScreenViewModel: state.homeScreenViewModel,
+            );
+          }
+          if (state is HomeLoadingState) {
             return const HomeLoadingContent();
-          },
-        ),
+          }
+          if (state is HomeErrorState) {
+            return HomeErrorContent(
+              errorMessage: state.errorMessage,
+            );
+          }
+          return const HomeLoadingContent();
+        },
       ),
     );
   }
