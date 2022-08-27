@@ -281,7 +281,7 @@ For services we use `Chopper Client`. When you described the service don't forge
 ```bash
 fvm flutter packages pub run build_runner build
 ```
-As result `_$OffersApiService` object will be generated.
+As result `_$HomeApiService` object will be generated.
 
 ```dart
 abstract class HomeDataSource {
